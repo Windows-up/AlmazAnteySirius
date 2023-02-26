@@ -1,7 +1,10 @@
 # AlmazAnteySirius
 By school 30 from Nighniy Novgorod 
 
+
+
 #### 1. Установка библиотек
+Для работы программы нужен python 3.x!
 * Откройте командную строку(cmd)
 * Введите
 ```sh
