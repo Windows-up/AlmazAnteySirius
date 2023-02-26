@@ -1,12 +1,8 @@
 import itertools
 import time
 import cv2
-
 from analytics import get_image_out_point
 import math
-
-FILE_NAME = "images/dolgo.jpg"
-
 
 def dist(p1, p2):
     return math.hypot(p2[0] - p1[0], p2[1] - p1[1])
@@ -17,6 +13,7 @@ def get_variants(data):
 
 
 if __name__ == '__main__':
+    FILE_NAME = input("Укажите путь до схемы\n")
     print("Image processing started")
     data = get_image_out_point(FILE_NAME)
     print("Image processing complited")
@@ -24,7 +21,7 @@ if __name__ == '__main__':
     minPath = 0
     prev_proc = 0
     all_variants_len = math.factorial(len(data.places))
-    print("math processing started")
+    print("Math processing started")
     start_time = time.time()
 
     for i, variant in enumerate(itertools.permutations(data.places)):
@@ -54,7 +51,7 @@ if __name__ == '__main__':
     for i in range(len(minPath) - 1):
         cv2.line(img, minPath[i], minPath[i + 1], (235, 161, 52), 3)
 
-    cv2.imshow("result", img)
+    cv2.imshow("Result", img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
